@@ -2,9 +2,9 @@
 
 API REST desarrollada para la asignatura Proyecto Tecnologías de la Información 
 de la Universidad Politècnica de Catalunya ©
-- Fecha de entrega del proyecto: Junio de 2020
 
-# Frameworks utilizados 🛠️
+
+## Frameworks utilizados 🛠️
 - Express
 - Socket.io
 - Mongoose
@@ -14,6 +14,8 @@ de la Universidad Politècnica de Catalunya ©
 - Body-Parser
 - Morgan
 - ...
+
+- Fecha de entrega del proyecto: Junio de 2020
 
 
 
