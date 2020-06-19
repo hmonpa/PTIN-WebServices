@@ -15,7 +15,9 @@ de la Universidad Politècnica de Catalunya ©
 - Morgan
 - ...
 
-- Fecha de entrega del proyecto: Junio de 2020
+
+
+Fecha de entrega del proyecto: Junio de 2020
 
 
 
