@@ -1,0 +1,370 @@
+body,p,h3,h1,h2,a{
+  font-family: 'Roboto', sans-serif;
+}
+.header {
+    background: url('../img/foto22.jpg') center center;
+    background-size: cover;
+    min-height: 70vh;
+    width: 100%;
+    
+  }
+  #icono1 {color:white;}
+  
+  .navbar{
+      font-size: 27px;  
+      min-height: 140px ;
+      width: 100%;
+      
+  }
+  
+  .logo-brand{ 
+    margin-left:30%;
+    margin-top: 6%;
+    height: 120px;
+    width: 120px;
+  }
+  
+ 
+  
+  #textnav{ 
+  color: white !important;
+  margin-right: 40px;
+  
+  
+  }
+  
+  .nav-link:hover { 
+    color: whitesmoke;
+    border-bottom: 1px solid white;
+  }
+    
+  
+  .navbar-toggler{ 
+    font-style: 40px;
+    color:white;
+  }
+  .navbar-toggler:focus{outline:none;}
+  
+  #cabecera{
+    margin-top:90px;
+    width: auto;
+    width:100%;
+  }
+  
+  .degradado{
+    display:none;
+  }
+  
+  #descripcion h1{ 
+    color:white;
+    font-size:80px;
+    width:auto;
+    margin-left:5%;
+    margin-top: 5%;
+    
+  
+  }
+  
+  #descripcion p{ 
+    color:white;
+    font-size:45px;
+    width:auto;
+    margin-left:10%;
+    margin-top: 10px;
+    margin-right:10%;
+  }
+
+
+/*PANELES*/
+
+#titulo{
+  margin-top: 2%;
+  color: #697074;
+  font-size: 45px;
+  margin-left: 2%;
+}
+
+#desctitulo{
+  margin-top: 1%;
+  color: #697074;
+  font-size: 20px;
+  font-style: italic;
+  margin-left: 4%;
+}
+#barra {
+	height: 3px;
+  background: rgb(76,67,227);
+  background: linear-gradient(90deg, rgba(76,67,227,1) 0%, rgba(78,78,246,1) 26%, rgba(0,212,255,1) 76%);
+  width: 15%;
+  margin-top:3% ;
+ 
+}
+.card{
+  border-radius: 0.25rem; 
+  overflow: hidden;
+  margin-top: 10%;
+  min-height: 640px;
+}
+
+.wrapper {
+    width: 90%;
+    padding: 20px;
+    margin-left:auto ;
+    margin-right:auto ;
+    
+  }
+  .wrapper .card {
+    background-color: #fff;
+    border-style: none;
+    
+  
+  }
+  
+  .wrapper .card img {
+    width: 100%;
+    height: 400px;
+    
+   
+    object-fit: cover;
+    object-position: 0 center;
+    border-radius: 0.25rem;
+    -webkit-transition: all 2s ease;
+	  -moz-transition: all 2s ease;
+  	-o-transition: all 2s ease;
+  	-ms-transition: all 2s ease;
+    transition: all 2s ease;
+ 
+    
+  }
+
+  .wrapper .card img:hover {
+   
+    opacity: 0.6;
+    transform: scale(1.125);
+
+ 
+  }
+  .wrapper .card h3 {
+    padding: 10px 0;
+    font-size: 1.8em;
+    font-weight: 600;
+  }
+  .wrapper .card p {
+    color: #555;
+    font-size: 18px;
+  }
+
+  #containerimg{
+    max-height: 700px; 
+    overflow: hidden;
+    padding-right: 0; 
+    padding-left: 0;  
+    margin-right: auto;
+    margin-left: auto;
+    
+  }
+#botoninfo{
+  background: #164ba1;
+  color: white;
+}
+
+
+
+  
+    /*FOOTER*/
+footer{
+  color: white;
+  background-color: black;
+  position: relative;
+  width:100%;
+  height: 800px;
+  font-family: 'Roboto', sans-serif;
+  background: #164ba1;
+  
+}
+
+#foot{
+  
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px 20px;
+  margin-top: 4%;
+  height: 300px;
+
+}
+
+.conten{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; 
+  font-size: 20px;
+  margin-top:20%;
+  
+}
+#opciones2{
+  margin-top: 0%;
+}
+
+#redes h3{
+  *margin-bottom: 50px;
+  
+}
+
+.iconosredes{
+  margin-top: -10px;
+  font-size: 40px;
+}
+
+#banners{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  padding: 0px 20px;
+}
+
+.iconosapps{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+}
+
+.iconosapps a{
+  text-decoration: none;
+}
+
+.banner{
+  margin: 0 5px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  width: auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  border-radius: 10px;
+  font-size:20px;
+}
+
+.icono{
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.letras{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.letras p{
+  margin: 0px;
+}
+
+  @media only screen and (max-device-width: 480px) {
+    /* write smartphone styles here */
+    #descripcion h1{ 
+       font-size:50px;
+       width:auto;
+       padding-left:0px; 
+       margin-left: 10%;   
+       text-align: center;
+       margin-top: auto;
+    
+    }
+    
+    #descripcion p{ 
+      font-size:20px;
+      width:auto;
+      padding-left:0px; 
+      margin-left: 15%;
+      text-align: center;
+     
+    }
+    .degradado{
+      display: none;
+    }
+  
+    #textoinfor{
+      margin-top: 10%;
+      text-align: justify; 
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+    }
+    footer{
+      color: white;
+      background-color: black;
+      position: relative;
+      width:100%;
+      height: 800px  !important;
+      background: #164ba1;
+      
+    }
+   
+  }
+  
+  @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+    /* tablets in portrait mode */
+  
+    #descripcion h1{ 
+      font-size:60px;
+    
+      margin-top: auto;
+      justify-content: center;
+    
+    }
+    
+    #descripcion p{ 
+      font-size:40px;
+      width:auto;
+      padding-left:0px; 
+      margin-left: 15%;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  
+    .degradado{
+      display: none;
+    }
+  
+    
+  }
+  
+  
+  @media only screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+    /* tablets in landscape mode and smaller/older monitors */
+    .header {
+      min-height: 60vh;  
+    }
+    
+    #descripcion h1{ 
+      font-size:80px;
+      margin-top: auto;
+      justify-content: center;
+    
+    }
+    
+    #descripcion p{ 
+      font-size:60px;
+      width:auto;
+      padding-left:0px; 
+      margin-left: 15%;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  
+    .degradado{
+      display: none;
+    }
+  
+  
+  }

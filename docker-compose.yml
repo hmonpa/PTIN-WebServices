@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  viawebclients:
+     image: viawebclients
+     #image: httpd:2.4
+     container_name: viawebclients
+     build: ./webClients
+     ports:
+        - "8080:80"
+        - "443:443"
+     volumes:
+        - ./webClients/Apache_Conf:/etc/apache2/sites-available
+        - ./webClients:/var/www
+     networks:
+        cloud_net:
+            ipv4_address: 192.168.1.2
+
+  viawebtecnics:
+     image: viawebtecnics
+     #image: httpd:2.4
+     container_name: viawebtecnics
+     build: ./webTecnics
+     ports:
+        - "8081:80"
+        - "444:443"
+     volumes:
+        - ./webTecnics/Apache_Conf:/etc/apache2/sites-available
+        - ./webTecnics:/var/www
+     networks:
+        cloud_net:
+            ipv4_address: 192.168.1.3
+
+  db:
+     image: mongo
+     container_name: db
+     environment:
+       #  MONGO_INITDB_ROOT_USERNAME: admin
+       #  MONGO_INITDB_ROOT_PASSWORD: admin
+         MONGO_INITDB_DATABASE: terminal2
+     volumes:
+        - ./mongoDades/MongoDB.js:/docker-entrypoint-initdb.d/init.js
+     ports:
+       - "27017:27017"
+     networks:
+       cloud_net:
+          ipv4_address: 192.168.1.4
+
+  apirest:
+     build:
+        context: ./apirest
+        dockerfile: ./dockerfile
+     image: apirest
+     container_name: apirest
+     ports: 
+        - "3000:3000"
+     depends_on:
+       - db   
+     networks:
+       cloud_net:
+          ipv4_address: 192.168.1.5
+
+networks:
+   cloud_net:
+      ipam:
+        driver: default
+        config:
+         - subnet: 192.168.1.0/24

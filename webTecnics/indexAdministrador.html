@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="./img/logonegro.png">
+        <title>Vilanova Intelligent Airport</title>
+
+        
+        <!-- Required meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/cabecera.css">
+        <link rel="stylesheet" href="./css/mapa.css">
+        <link rel="stylesheet" href="./css/fontello.css">
+        <link rel="stylesheet" href="./js/daynocturnemode1.js">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </head>
+    <body>
+    <header class="header">
+        <div class="header-item"> <h class="titulo">VIA Administrador</h></div>
+        <div id="tgl" onclick="change()" style="color:#CC5D03;" class="fas fa-sun"></div>
+        <div id= "botoneshead" class="header-item">
+            <a id = "cerrarses" href="./index.html" onclick ="sessionStorage.clear();" style="text-decoration: underline;"> Cerrar sesión </a>
+        </div>
+    </header>
+    <div class="cabecera ">
+        <!--OPCIONES DE ARRIBA-->
+         <ul class="nav w-100" id="opciones">
+           <li class="nav-item c2">
+             <a class="nav-link btn2" data-toggle="tab" id="navegador" href="#mapa-admin" > MAPA</a>
+           </li>
+         </ul>    
+     <!--DENTRO DEL BUSCADOR-->    
+    </div>
+
+    <form class="container" id="recuadro"> 
+        <div class="tab-content">
+            <div id="vuelos" class="container tab-pane fade" >
+                    <div class="container-fluid" id = "mid-container">                    
+                        <h2 class="titulo" style="text-align: center;margin:50px;">Gestión de Vuelos</h2>
+                        <div id="tablavuelos">
+                            <div id="filtradovuelos" class="filtros" style="margin-bottom: 10px;">
+                                <label class="titulofiltro filtraje">Filtrar por estado:</label>
+                                <select id= "filtrovuelos" class ="selector custom-select">
+                                    <option value ="0" selected> Todos </option>
+                                    <option value= "1"> En hora</option>
+                                    <option value= "2"> Cancelado</option>
+                                    <option value= "3"> Con retraso</option>
+                                </select></td>
+                                <button id="cambiavuelos" type="button" class="btn button-style" style="outline: none;">Filtrar</button>
+                            </div>
+                                <table id= "vuelos" class="table table-bordered tabla shadow">
+                                    <thead class="titulotabla">
+                                        <tr>
+                                            <th scope="col">Vuelo</th>
+                                            <th scope="col">Aerolínea</th>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Tipo de vuelo</th>
+                                            <th scope="col">Hora de embarque</th>
+                                            <th scope="col">Hora de salida</th>
+                                            <th scope="col">Hora de llegada</th>
+                                            <th scope="col">Puerta de embarque</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id = "contenido">
+                                    </tbody>
+                                </table>
+                                <div id ="alerta2" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                                    El vuelo introducido no es correcto. <strong>Introduce bien los datos.</strong>
+                                </div>
+                                <div id ="alerta3" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                                    La fecha introducida no es correcta. <strong>Introduce la fecha con el formato correcto (AAAA-MM-DD).</strong>
+                                </div>
+                                <div id ="alerta4" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                                    El vuelo introducido no opera en esta terminal. <strong>Introduce bien los datos.</strong>
+                                </div>
+                                <div id ="alertaautent3" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                                    No puedes hacer esto. <strong>No tienes autorización.</strong>
+                                </div>
+                                <div id="formvuelos" class ="hiden">
+                                    <div class="txt">
+                                        <label class="inps">Nombre de vuelo</label><input autocomplete="off" type="text" class="inpts" placeholder="Introduce el código de vuelo">
+                                    </div>
+                                    <div class="txt">
+                                        <label class="inps">Aerolínea</label>
+                                        <select id="selectair" class="selector custom-select">
+                                            <option value="0" disabled selected>Escoge una aerolínea</option>
+                                            <option value="1">Vilanova Airlines</option>
+                                            <option value="2">IBERIA</option>
+                                            <option value="3">KLM</option>
+                                            <option value="4">AirEuropa</option>
+                                            <option value="5">Vueling</option>
+                                            <option value="6">QATAR Airways</option>
+                                        </select>
+                                    </div>
+                                    <div class="txt">
+                                        <label class="inps">Origen</label><input autocomplete="off" type="text" class="inpts" placeholder="Introduce Vilanova T2 o IATA;Ciudad;Aeropuerto">
+                                    </div>
+                                    <div class="txt">
+                                        <label class="inps">Destino</label><input autocomplete="off" type="text" class="inpts" placeholder="Introduce Vilanova T2 o IATA;Ciudad;Aeropuerto">
+                                    </div>
+                                    <div class="txt">
+                                        <label class="inps">Hora de salida</label><input autocomplete="off" type="text" class="inpts" placeholder="Formato HH:MM">
+                                    </div>
+                                    <div class="txt">
+                                        <label class="inps">Hora de llegada</label><input autocomplete="off" type="text" class="inpts" placeholder="Formato HH:MM">
+                                    </div>
+                                    <div class="txt">
+                                        <label class="inps">Hora de embarque</label><input autocomplete="off" type="text" class="inpts" placeholder="Formato HH:MM">
+                                    </div>
+                                    <div class="txt">
+                                        <label class="inps">Fecha</label>
+                                        <div id="fmtfecha">
+                                            <select id="selectyear" class="fecha selector custom-select">
+                                               <option value="13" disabled selected>Escoge un año</option>
+                                            </select>
+                                            <label> - </label>
+                                            <select class="fecha selector custom-select">
+                                                <option value="13" disabled selected>Escoge un mes</option>
+                                                <option value="0">01</option>
+                                                <option value="1">02</option>
+                                                <option value="2">03</option>
+                                                <option value="3">04</option>
+                                                <option value="4">05</option>
+                                                <option value="5">06</option>
+                                                <option value="6">07</option>
+                                                <option value="7">08</option>
+                                                <option value="8">09</option>
+                                                <option value="9">10</option>
+                                                <option value="10">11</option>
+                                                <option value="11">12</option>
+                                            </select>
+                                            <label> - </label>
+                                            <select class="fecha selector custom-select">
+                                                <option value ="31" disabled selected>Escoge un día</option>
+                                                <option value="0">01</option>
+                                                <option value="1">02</option>
+                                                <option value="2">03</option>
+                                                <option value="3">04</option>
+                                                <option value="4">05</option>
+                                                <option value="5">06</option>
+                                                <option value="6">07</option>
+                                                <option value="7">08</option>
+                                                <option value="8">09</option>
+                                                <option value="9">10</option>
+                                                <option value="10">11</option>
+                                                <option value="11">12</option>
+                                                <option value="12">13</option>
+                                                <option value="13">14</option>
+                                                <option value="14">15</option>
+                                                <option value="15">16</option>
+                                                <option value="16">17</option>
+                                                <option value="17">18</option>
+                                                <option value="18">19</option>
+                                                <option value="19">20</option>
+                                                <option value="20">21</option>
+                                                <option value="21">22</option>
+                                                <option value="22">23</option>
+                                                <option value="23">24</option>
+                                                <option value="24">25</option>
+                                                <option value="25">26</option>
+                                                <option value="26">27</option>
+                                                <option value="27">28</option>
+                                                <option value="28">29</option>
+                                                <option value="29">30</option>
+                                                <option value="30">31</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="txt">
+                                        <label class="inps">Puerta de embarque</label>
+                                        <div id ="pemb">
+                                            <input autocomplete="off" type="text" class="inpts" placeholder="Puerta de embarque">
+                                            <input autocomplete="off" type="text" class="inpts" placeholder="Coordenada X">
+                                            <input autocomplete="off" type="text" class="inpts" placeholder="Coordenada Y">
+                                        </div>
+                                    </div>
+                                    <div class ="mt-1 btnhiden">
+                                        <button id ="atras" type="button" class="btn  modif button-style mr-2"> Atrás </button>
+                                        <button id ="anade" type="button" class="btn  modif button-style"> Añadir</button>
+                                    </div>
+                                </div>
+                                <div id="formeliminarvuelo" class ="hiden">
+                                    <div class="txt">
+                                        <label class="inps">Introduce el id del vuelo</label><input autocomplete="off" type="text" id="inpts4" placeholder="Introduce el código de vuelo">
+                                    </div>
+                                    <div class ="mt-1 btnhiden">
+                                        <button id="atras4" type="button" class="btn  modif button-style mr-2"> Atrás </button>
+                                        <button id ="elimina3" type="button" class=" btn  modif button-style eliminacion"> Elimina</button>
+                                    </div>
+                                </div>
+                                <div class="botones">
+                                    <button  id ="modif" type="button" class="btn  modif button-style mr-2" > Modificar</button>
+                                    <button id ="abre"  type="button" class="btn  modif button-style mr-2" > Añadir</button>
+                                    <button id ="elimina2" type="button" class="btn  modif button-style" >Eliminar</button>
+                                </div>
+                        </div>  
+                    </div>
+            </div>
+
+            <div id="mapa-admin" class="container tab-pane active" >
+                <h2 class="titulo" style="text-align: center;margin:50px;">Mapa a tiempo real</h2>
+                <div id="mapaelementos">
+                    <div id= "filtromapa" class="filtraje">
+                        <div id= "informacion" style="visibility: hidden;font-weight: bold;color:red"></div>
+                        <h5 >Filtrado de posiciones</h5>
+                        <div class ="radios">
+                            <input type="radio" class="filtro" id="mostrartodo" name="filtro" value="todo" checked>
+                            <label for="todo">Todo</label>
+                        </div>
+                        <div class ="radios">
+                            <input type="radio" class="filtro" id="mostrarcoches" name="filtro" value="coches">
+                            <label for="coches">Coches</label>
+                        </div>
+                        <div class ="radios">
+                            <input type="radio" class="filtro" id="mostrarpasajeros" name="filtro" value="pasajeros">
+                            <label for="pasajeros">Pasajeros</label>
+                        </div>
+                    </div>
+                    <canvas id="canvas" width="725" height="332" style="cursor:crosshair;background:url(./img/terminal2posicionament.png)"></canvas>
+                </div>
+            </div>    
+
+            <div id="coches" class="container tab-pane fade" >
+                <div class="container-fluid" id = "mid-container">                    
+                    <h2 class="titulo" style="text-align: center;margin:50px;">Gestión de Coches</h2> 
+                        <div class="row mt-1 d-flex justify-content-center">
+                            <div id="filtradocoches" class="filtros" style="margin-bottom: 10px;">
+                                <label class="titulofiltro filtraje">Filtrar por estado:</label>
+                                <select id= "filtrocoche" class ="selector custom-select">
+                                    <option value ="0" selected> Todos </option>
+                                    <option value= "1"> No disponible</option>
+                                    <option value= "2"> Disponible</option>
+                                    <option value= "3"> Ocupado</option>
+                                    <option value= "4"> Cargando</option>
+                                    <option value= "5"> En la parada</option>
+                                </select></td>
+                                <button id="cambiacoches" type="button" class="btn button-style" style="outline: none;">Filtrar</button>
+                            </div>
+                            <table id="tablacoches" class="table table-bordered tabla shadow">
+                                <thead class="titulotabla">
+                                    <tr>
+                                        <th>Coche</th>
+                                        <th>Estado</th>
+                                        <th>Localización</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contenidocoches">
+                                </tbody>
+                            </table>
+                            <div id ="alerta" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                                El coche introducido no es correcto. <strong>Introduce los datos correctamente.</strong>
+                            </div>
+                            <div id ="alertaautent1" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                                No puedes hacer esto. <strong>No tienes autorización.</strong>
+                            </div>
+                            <div id ="anadecoche" class ="hiden">
+                                <div class="txt">
+                                    <label class="inps">Nuevo coche</label><input type="text" autocomplete="off" class="inpts2" placeholder="Introduce el código ID del coche (CHXXXX)">
+                                </div>
+                                <div id="coorde" class="txt">
+                                    <label class="inps" style="margin-right: 39px;">Nueva localización</label>
+                                    <div>
+                                        <input type="text" autocomplete="off" class="inpts2 " placeholder="Coordenada X">
+                                        <input type="text" autocomplete="off" class="inpts2" placeholder="Coordenada Y">
+                                    </div>
+                                </div>
+                                <div class="txt">
+                                    <label class="inps">Destino</label><input type="text" autocomplete="off" class="inpts2" placeholder="Introduce el destino del coche.">
+                                </div>
+                                <div class ="mt-1 btnhiden">
+                                    <button id="atras2" type="button" class="btn  modif button-style mr-2"> Atrás </button>
+                                    <button id ="anade2" type="button" class=" btn  modif button-style"> Añadir</button>
+                                </div>
+                            </div>
+                            <div id="formeliminacoche" class ="hiden">
+                                <div class="txt">
+                                    <label class="inps">Introduce el id del coche</label><input autocomplete="off" type="text" id="inpts3" placeholder="Introduce el código ID del coche (CHXXXX).">
+                                </div>
+                                <div class ="mt-1 btnhiden">
+                                    <button id="atras3" type="button" class="btn  modif button-style mr-2"> Atrás </button>
+                                    <button id ="elimina1" type="button" class=" btn  modif button-style eliminacion"> Elimina</button>
+                                </div>
+                            </div>
+                            <div class="botones">
+                                <button id ="modif2" type="button" class="btn  modif button-style mr-2" >Modificar</button>
+                                <button id ="abre2" type="button" class="btn  modif button-style mr-2 " >Añadir</button>
+                                <button id ="elimina" type="button" class="btn  modif button-style" >Eliminar</button>
+                            </div>
+                        </div>
+                </div>                           
+            </div>
+            <div id="shops" class="container tab-pane fade" >
+                <div class="container-fluid" id = "mid-container" >
+                    <h2 class="titulo" style="text-align: center;margin:50px;">Tiendas</h2>
+                    <div id="filtradotiendas" >
+                        <div id="filtradotiendas2" class="filtros" style="margin-bottom: 2.75%;">
+                            <label class="titulofiltro filtraje">Filtrar por tipo de tienda:</label>
+                            <select id= "filtrotienda" class ="selector custom-select">        
+                                <option value="0" selected>Todos</option>
+                                <option value="1">Restauración</option>
+                                <option value="2">Ropa</option>
+                                <option value="3">Ocio</option>
+                                <option value="4">DutyFree</option>
+                                <option value="5">Otros</option>
+                            </select></td>    
+                        </div>
+                        <button id="cambiatiendas" type="button" class="btn button-style" style="outline: none;" style="margin-bottom: 1%;">Filtrar</button>
+                    </div>
+                        <table id="tablatiendas" class="table table-bordered tabla shadow">
+                            <thead>
+                                <tr>
+                                    <th> Tienda </th>
+                                    <th> Tipo </th>
+                                    <th> Productos </th>
+                                </tr>
+                            </thead>
+                            <tbody id= "tiendas"></tbody>
+                        </table>
+                        <div id ="alertaautent2" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                            No puedes hacer esto. <strong>No tienes autorización.</strong>
+                        </div>
+                        <div id ="alerta5" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                            La tienda introducida no es correcta. <strong>Introduce los datos correctamente</strong>
+                        </div>
+                    <div id ="formtiendas" class ="hiden" style="justify-content: center; align-items: center;">
+                        <div class="txt">
+                           <label class="inps">ID tienda</label> <input type ="text" class="inpstiendas" placeholder="Introduce el código ID del establecimiento">
+                        </div>
+                        <div class="txt">
+                            <label class="inps">Nombre tienda</label> <input type ="text" class="inpstiendas" placeholder="Introduce el nombre del establecimiento">
+                        </div>
+                        <div class="txt">
+                            <label class="inps">Tipo de tienda</label>
+                            <select class="tienda selector custom-select inpstiendas">
+                                <option value="0" disabled selected>Escoge un tipo de tienda</option>
+                                <option value="1">Restauración</option>
+                                <option value="2">Ropa</option>
+                                <option value="3">Ocio</option>
+                                <option value="4">DutyFree</option>
+                                <option value="5">Otros</option>
+                            </select>
+                         </div>
+                        <div class="txt">
+                            <label class="inps">Productos de la tienda:</label> <input type ="text" class="inpstiendas" placeholder="Introduce el tipo de productos ofrecidos">
+                        </div>
+                        <div class="txt">
+                            <label class="inps">Foto del establecimiento</label> <input type ="text" class="inpstiendas" placeholder="Introduce un enlace a una imagen JPG del establecimiento">
+                         </div>
+                        <div class="txt">
+                            <label class="inps">Localización</label>
+                            <input type ="text" class="inpstiendas" placeholder="Coordenada X">
+                            <input type ="text" class="inpstiendas" placeholder="Coordenada Y">
+                        </div>
+                        <div class ="mt-1 btnhiden">
+                            <button id="atrastienda" type="button" class="btn button-style mr-2"> Atrás </button>
+                            <button id ="anadetienda" type="button" class=" btn button-style"> Añade nueva tienda</button>
+                        </div>
+                    </div>
+                    <div id="formeliminatienda" class ="hiden" >
+                        <div class="txt">
+                           <label class="inps">Nombre de la tienda</label> <input id="eliminartienda" autocomplete="off" type ="text" placeholder="Introduce el nombre del establecimiento">
+                        </div>
+                        <div class ="mt-1 btnhiden">
+                            <button id="atrastienda2" type="button" class="btn button-style mr-2"> Atrás </button>
+                            <button id ="eliminatienda2" type="button" class=" btn button-style eliminacion"> Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button id ="abretienda" type="button" class="btn button-style mr-2 " >Añadir</button>
+                        <button id ="eliminatienda" type="button" class="btn button-style" >Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </form>           
+                                                         
+          
+    
+
+        <!-- JQuery -->
+        <script src="./js/menu.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery-3.5.0.min.js"></script>
+        <script src="./js/moment.js"></script>
+        <script src="./js/moment-local.js"></script>
+        <script src="./js/mapa.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="./js/gestiontiendas.js"></script>
+        <script src="./js/gestionvuelos.js"></script>
+        <script src="./js/ajaxgestiondecoches.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="./js/daynocturnemode1.js"></script>
+    </body>
+</html>

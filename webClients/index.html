@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="stylesheet" href="./js/index.js">
+  <link rel="stylesheet" href="./js/localizador_index.js">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  
+
+<link rel="shortcut icon" href="./img/logoazul.png">
+<title>Vilanova Intelligent Airport</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <!--NAVBAR-->
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container">
+      <a class="navbar-brand" > <img src="./img/logo.png" class="logo-brand" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="services.html" id="textnav">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Mapa.html" id="textnav">Mapa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Como_llegar.html" id="textnav">Accesos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#foot" id="textnav">Contacto</a>
+          </li>
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!--TEXT VILANOVA-->
+
+<div class="row" id="cabecera">
+  <div class="col"  id="descripcion">
+    <h1>Vilanova Intelligent Airport</h1>
+    <p >Bienvenido a Vilanova Intelligent Airport, el aeropuerto del futuro. Descubre las novedades, noticias y información sobre tus próximos vuelos.
+    </p>
+  </div>
+ 
+  <!--BUSCADOR DE VUELOS-->
+  <div class=" col" id="buscadorvuelos">
+   <!--OPCIONES DE ARRIBA-->
+    <ul class="nav nav-tabs" id="opciones" >
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" id="navegador"href="#home"> <i class="fa fa-plane"id="icono1"></i>Vuelos</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" data-toggle="tab"id="navegador" href="#menu1"> <i class="fa fa-info-circle" aria-hidden="true" id="icono1"></i>Localizador</a>
+      </li>
+    </ul>
+    <!--DENTRO DEL BUSCADOR-->
+    <form class="container" id="recuadro"> 
+      <div class="tab-content">
+        <div id="home" class="container tab-pane active"><br>
+          <div class="input-group mb-3"  >
+            <div class="input-group-prepend"></div>
+            <input type="text" class="form-control" id="inputOrigen"placeholder="Origen">
+            <input type="text" class="form-control"id="inputDestino" placeholder="Destino">
+            <!-- <input type="input-group date" class="form-control"id="inputFecha" data-date-format="dd.mm.yyyy" placeholder="dd/mm/aaaa">-->  
+            <input type="date" value="yyyy-mm-dd" class="form-control" id="inputFecha" >
+            <a type="button" href="Vuelos_de.html" onclick="valores_vuelos()" class="btn btn-primary" id="buscar">Buscar<i class='fas fa-angle-right' id="iconobuscar"></i></a>
+            
+          </div>
+          </div>
+        <div id="menu1" class="container tab-pane fade"><br>
+          <div class="input-group mb-3"  >
+            <div class="input-group-prepend"></div>
+            <input type="text" class="form-control"  id="input_localizador_index"placeholder="Nº localizador">
+            <a type="button"  onclick="guardarValor()" class="btn btn-primary" id="buscar3">Buscar<i class='fas fa-angle-right' id="iconobuscar"></i></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>  
+  </div>
+</div>
+</header>
+
+<!--PANELES INFORMACION-->
+<div class="row" id="infopagina">
+  <div class="col-sm-2">
+    <h2 id="h2tiempo">TIEMPO</h2>
+    <a class="weatherwidget-io" href="https://forecast7.com/es/41d221d73/vilanova-i-la-geltru/" data-label_1="VILANOVA I LA GELTRÚ" data-label_2="VIA" data-icons="Climacons" data-mode="Current" data-days="3" data-theme="pure" id="tiempo" >VILANOVA I LA GELTRÚ VIA</a>
+    <script> !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>
+  </div>
+  
+  <div class="col-sm-2">
+    <a href="Mapa.html"><img src="./img/pointer.png" alt="Map" id="map"/></a>
+  </div>
+  
+  <div class="col-sm-3">
+    <h2 id="h2mapa">MAPA AEROPUERTO</h2>
+  <p id="p2mapa">Descubre dónde te encuentras en cada momento y tus tiendas y restaurantes favoritos. No te pierdas al buscar la puerta de embarque.</p>
+  </div>
+  
+  
+  <div class="col-sm-2">
+    <img src="./img/car.png" alt="Coche" id="car"/>
+  </div>
+  
+  <div class="col-sm-3">
+    <h2 id="h2coches">COCHES AUTÓNOMOS</h2>
+    <p id="p2coches">Desplázate por el aeropuerto de una forma más rápida y sencilla gracias a nuestra flota de coches autónomos. Pídelos a través de nuestra app.</p>
+  </div>
+</div>
+
+
+
+
+<!--Foto como llegar-->
+<div class="comollegar2" id="comollegar">
+<div class="row no-gutters">
+  <div class="col-sm-6 "> 
+    <img src="./img/comollegar.jpg" alt="Maleta" id="fotocomollegar"/>
+  </div>
+  
+  <!--Rellenar como llegar-->
+  <div class="col-sm-6 ">
+    <div id= "cuadro">
+    <h1 id="titulo"> Cómo llegar</h1>
+    <hr id= "barra">
+    <p id= "texto">
+      Consulta las diferentes formas de acceso al aeropuerto y descubre nuestro servicio de coches autónomos. 
+    </p>
+
+      <a type="button" href="Como_llegar.html" class="btn btn-primary"id="buscar2">Consulta<i class='fas fa-angle-right' id="iconobuscar"></i></a> 
+    
+  </div>
+  </div>
+</div>
+
+
+
+<!--Carousel-->
+<div class="noticias">
+<h1 id="noticiash1">Noticias</h1>
+<hr id= "barranoticias">
+<p id= "textonoticias" >
+  Mantente al tanto de las últimas noticias en aviación y la última hora del estado del aeropuerto
+</p>
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active"style="height: 70vh;">
+      <img src="./img/retraso.jpeg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 id="h5not">Vuelo cancelado</h5>
+        <p id="pnot">Debido a la pandemia causada por el COVID-19, se cancela el vuelo destino Dinamarca.</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="height: 70vh;">
+      <img src="./img/mcdonald.jpeg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 id="h5not">Apertura de MCDonald's</h5>
+        <p id="pnot">Gracias a nuestro dirigente hemos conseguido incorporar la franquicia de comida rápida más famosa del mundo</p>
+      </div>
+    </div>
+    <div class="carousel-item"style="height: 70vh;">
+      <img src="./img/cocheautonomo.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 id="h5not">Nuevos coches autónomos</h5>
+        <p id="pnot">Hemos incorporado nuevos coches autónomos para facilitar el desplazamiento por el aeropuerto.</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
+<!--FOOTER-->
+<footer>
+  <div id="foot" >
+    <div class="row">
+      <div class="col-sm-4">
+    <div id="contacto" class= "conten">
+      <h3 class="titulo">Contacto</h3> <br>
+      <div id="opciones-contacto">
+        <i class="fas fa-phone"></i> 999 999 999 <br>
+        <i class="far fa-envelope"></i> aeropuerto@vilanova.com <br>
+        <i class="fas fa-map-marker-alt"></i> Av.de Víctor Balaguer
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div id="redes" class= "conten">
+      <h3 class="titulo">Síguenos en redes sociales</h3> <br>
+      <div class="iconosredes">
+       <a href="https://twitter.com/VIA89088873" > <i class="fab fa-twitter-square" style="color:white"></i></a>
+       <a href="https://www.facebook.com/Vilanova-Intelligent-Airport-113338807046718/" > <i class="fab fa-facebook-square" style="color:white"></i></a>
+       <a href="https://www.instagram.com/vilanovaintelligentairport/" > <i class="fab fa-instagram"style="color:white"></i></a>
+       <a href="https://www.youtube.com/channel/UC0OqgNTaEj3SiiADDHd_cBw" > <i class="fab fa-youtube"style="color:white"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div id="banners" class="conten">
+      <h3 class="titulo">Descarga nuestra app</h3> <br>
+      <div class="iconosapps">
+        <button class= "banner">
+          <div class="icono">
+            <i id="google" class="fab fa-google-play"></i> 
+          </div>
+          <div class="letras">
+            <p>Disponible en</p>
+            <strong>GooglePlay</strong>
+          </div>
+        </button>
+          <button class= "banner">
+            <div class="icono">
+              <i id="apple" class="fab fa-apple fa-lg"></i> 
+            </div>
+            <div class="letras">
+              <p>Disponible en</p>
+              <strong>AppleStore</strong>
+            </div>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div> <!--- Aquí acaba el contenedor del pie de pagina -->
+</div>
+</footer>
+
+
+
+
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./js/javascript.js"></script>
+    <script src="./js/localizador_index.js"></script>
+ 
+</body>
+
+</html>

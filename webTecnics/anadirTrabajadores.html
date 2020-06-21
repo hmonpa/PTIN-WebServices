@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="./img/logonegro.png">
+        <title>Vilanova Intelligent Airport</title>
+
+        
+        <!-- Required meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <script src="./js/jquery.js"></script>
+        <script src="./js/anadeTrabajador.js"></script>
+        <link rel="stylesheet" href="./css/anadir.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./js/daynocturnemode1.js">
+    </head>
+    <body>
+        <div class="row d-flex justify-content-center"><h2 style="margin-bottom:30px;">Gestión de trabajadores:</h2></div>
+            <div id="general">
+                <table id ="alltrabajadores" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th> Usuario </th>
+                            <th> Nombre </th>
+                            <th> Puesto de trabajo</th>
+                        </tr>
+                    </thead>
+                    <tbody id= "admins"></tbody>
+                </table><br>
+                <div id= "eleccion">
+                    <button id= "abre" type= "button" class="btn btn-primary mr-2"> Añadir un trabajador </button>
+                    <a href="#" onclick="window.close()" style ="text-decoration: underline;">Cerrar pestaña</a>
+                </div>
+                <form id = "anadir">
+                    <div class="row d-flex justify-content-center"> <h2> Añadir trabajadores: </h2></div><br>
+                    <div class="txt">
+                        <label class="inps">NOMBRE:</label><input type="text" class="inpts" placeholder="Introduce el nombre del nuevo trabajador">
+                    </div>
+                    <div class="txt">
+                        <label class="inps">ID USUARIO:</label><input type="text" class="inpts" placeholder="Introduce el ID de usuario">
+                    </div>
+                    <div class="txt">
+                        <label class="inps">EMAIL:</label><input type="text" class="inpts" placeholder="Introduce la dirección email">
+                    </div>
+                    <div class="txt">
+                        <label class="inps">CONTRASEÑA:</label><input type="password" class="inpts" placeholder="Introduce la contraseña">
+                    </div>
+                    <div class="txt">
+                        <label class="inps">REPITE CONTRASEÑA:</label><input type="password" class="inpts" placeholder="Introduce de nuevo la contraseña">
+                    </div>
+                    <div class="txt">
+                        <label class="inps">PUESTO:</label>
+                        <select id="tla" class ="inpts selector custom-select">
+                            <option value="0" selected disabled>Selecciona un trabajo</option>
+                            <option value="1">Controlador vuelos</option>
+                            <option value="2">Controlador coches</option>
+                            <option value="3">Jefe</option>
+                        </select>
+                    </div>
+                    <div id ="botones">
+                        <button id= "atras" type= "button" class="btn btn-primary mr-2 mt-2"> Atrás</button>
+                        <button id ="anade" type= "button" class="btn btn-primary mt-2"> Añadir</button>
+                    </div>
+                </form>
+                <div id ="alerta" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                    Ha ocurrido un error. <strong> No tienes autorización</strong>
+                </div>
+            </div>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#general{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+#alltrabajadores{
+    width: 80%;
+}
+
+.eliminame{
+    width:100%;
+    background-color: red;
+}
+
+.columnahidden{
+    display: none;
+}
+
+#anadir{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+#eliminar{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.txt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center ;
+    width: 100%;
+}
+
+.inpts{
+    width: 70%;
+}
+
+#tla {
+    width:70%;
+}
+
+.inpts2{
+    width: 70%;
+}
+
+#botones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

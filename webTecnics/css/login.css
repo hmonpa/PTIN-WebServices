@@ -1,0 +1,88 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: grey;
+    height: 100vh;
+    padding: 10px;
+   background-image: url("../img/fotologin.jpg");
+   background-position: center center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+#fondo:before{
+    content:'';
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+#login {
+    background-color: white;
+    border: grey solid 2px;
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h3 {
+    color: black;
+    font-size: 25px;
+    margin-top: 10%;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+/* Formulario*/
+.user {
+    outline:none;
+    padding-left: 10px;
+    width: 90%;
+    text-align: left;
+    border: grey solid;
+    border-radius: 20px;
+    margin-bottom: 5%;
+}
+
+#pos{
+    display: flex;
+    flex-direction: row;
+}
+
+/*Parte de abajo*/
+#b{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#boton {
+    outline: none;
+    background-color: transparent;
+    border: grey solid 1.5px;
+    color: grey;
+}
+
+/*Boton de show contraseña*/
+#ensena{
+    background-color:transparent;
+    border:none;
+    outline: none;
+    padding-bottom: 15px;
+}
+
+/* Alerta del bloq mayus*/
+#mayus{
+    color: red;
+    visibility: hidden;
+}

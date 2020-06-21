@@ -1,0 +1,374 @@
+body {
+ font-family: 'Arial' ; /* */
+ -webkit-transition: all 0.4s linear;
+}
+
+#tgl{
+    font-size: 2em;
+    color: #FFF;
+    -webkit-transition: all 0.6s linear;
+    transition-duration: .3s;
+    
+  }
+/* Cabecera y título*/
+.header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+    padding: 25px;
+}
+.header-item{
+    width: 100%;
+}
+
+.header-item a{
+    margin: 5px;
+    float: right;
+}
+
+.titulo {
+    font-size: 30px;
+    color: grey;
+    margin-left: 3%;
+}   
+
+.titulo.nocturno{
+    color: white;
+}
+/*#cabecera {
+    width: 100%;
+    height: 70px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: grey solid 1px;
+    border-bottom: grey solid 1px;
+    
+}*/
+.cabecera {
+    width: 100%;
+    height: 70px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: grey solid 1px;
+    border-bottom: grey solid 1px;
+}
+
+#opciones{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#opciones li{
+    width:auto;
+}
+.c1:hover,.c2:hover,.c3:hover {
+    cursor: pointer;
+}
+.c1,.c2,.c3 {
+    width: 33.3%;    
+    text-align: center;
+    vertical-align: middle;
+    
+}
+#recuadro {
+    width: 100%;
+}
+
+#bcabecera,#bcabecera2,#bcabecera3   {
+    background-color: none;
+    border: none;
+    color: grey;
+}
+
+.table {
+    height: 50%;
+    width: 100%;
+}
+#mid-container {
+  width: 98%; 
+  justify-content: center;
+}
+
+/*Características de las diferentes tipos de tablas que nos encontramos*/
+
+.okey{
+    background-color: #06a128;
+    color: white;
+}
+
+.nokey{
+    background-color: #DA1414;
+    color: white;
+}
+
+.ocupado{
+    background-color:#fd9800;
+    color: white;
+}
+
+.cargando{
+    background-color: #E0D90D;
+    color: black;
+}
+.cargando select{
+    color: black;
+}
+
+.parada{
+    background-color: #0B9FE7;
+    color:white;
+}
+.enhora{
+    background-color: #06a128;
+    color: white;
+}
+
+.cancelado{
+    background-color: #DA1414;
+    color: white;
+}
+
+.conretraso{
+    background-color:#fd9800;
+    color: white;
+}
+
+/* Buttons */
+.button-style {
+    box-shadow: 0 2px #999; 
+    border-radius: 1; 
+    background-color: #249ce7; 
+    color: white; 
+    outline: none;
+
+}
+
+.button-style:hover {
+    background-color: #1c7cb8;
+    color: white;
+}
+
+.btn1.nocturno,.btn2.nocturno,.btn3.nocturno{
+    color: white;
+}
+
+.filtraje.nocturno{
+    color:white;
+}
+
+#tablatiendas.nocturno{
+    background-color: #ECEAEA;
+}
+
+#filtradotiendas{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#filtradotiendas2{
+    width:20%;
+}
+
+#navegador{
+    color: black;
+}
+#navegador.nocturno{color: white;}
+
+.titulotabla.nocturno{
+    background-color: whitesmoke;
+    
+}
+
+/*Propiedades de ambas tablas*/
+.tabla tbody tr:hover{
+    filter: brightness(1.1);
+}
+
+#vuelos td{
+    width: 10%;
+}
+
+#tablavuelos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+#tablacoches{
+    padding-bottom: 10px;
+}
+
+#tablatiendas tbody tr:hover{
+    background-color: greenyellow;
+    filter:brightness(0.8);
+}
+
+#tablatiendas{
+    width:100%;
+}
+
+#tablatiendas td{
+    width:10%;
+}
+.ofertas{
+    display:none;
+}
+
+.ofertas td{
+    width:10%;
+    background-color: #807F7B;
+}
+
+.poffers:hover{
+    background-color: yellow;
+    color: black;
+}
+
+.poffers{
+    color: white;
+}
+
+.poffers td{
+    width: 10%;
+}
+
+#mapaelementos{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom:50px;
+}
+
+#filtromapa{
+    display:flex;
+    flex-direction: column;
+}
+
+.radios{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+}
+.radios input{
+    margin-right: 70px;
+}
+.radios label{
+    margin-top: 5px;
+}
+/*Añadir*/
+#anadecoche{
+    width:50%;
+}
+
+#coorde input{
+    width: 100%;
+}
+.hiden{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    padding: 5px;
+}
+
+.inpts{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#fmtfecha{
+    width:70%;
+    display:flex;
+    flex-direction: row;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#pemb{
+    display:flex;
+    flex-direction: row;
+    width: 70%;
+}
+
+.inpts2{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.selector{
+    width: 70%;
+}
+
+.inps.nocturno{
+    color: whitesmoke;
+}
+
+.txt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center ;
+    width: 100%;
+}
+
+.txt input{
+    width: 70%;
+}
+
+.btnhiden{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.btnhiden button{
+    width: 100%;
+}
+
+.eliminacion:hover{
+    background-color: red;
+}
+
+/*Botones de añadir y modificar*/
+.decorated {
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    color: white;
+}
+
+.decorated option{
+    color: black;
+}
+.botones{
+    display: flex;
+	flex-direction: row;
+	justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.orden{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

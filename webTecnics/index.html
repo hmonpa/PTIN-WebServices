@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="./img/logonegro.png">
+        <title>Vilanova Intelligent Airport</title>
+
+        
+        <!-- Required meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!--JavaScripts-->
+        <script src="./js/jquery-3.5.0.min.js"></script>
+        <script src="./js/login.js"></script>
+        <script src="https://kit.fontawesome.com/ac2612b01d.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/login.css">
+        
+    </head>
+    <body onload = "nobackbutton()">
+        <div class="logo"></div>
+        <div id="login">
+            <h3>LOGIN ADMINISTRADOR</h3>
+            <form class="container">
+                <label>Usuario:</label>
+                <input type="text" class="user" id= "usuario" autocomplete="off">
+                
+                <label>Contraseña:</label>
+                <div id= "pos">
+                    <input type="password" id= "pass" class="user">
+                    <button id="ensena" type="button" id= "show" onclick="mostrarContrasena()">
+                        <i style="color:grey;" class="fas fa-eye-slash"></i>
+                    </button>
+                </div>
+                <div id="b">
+                    <label id= "mayus">Bloq. Máyus. activado.</label>
+                    <button type="button" class="btn btn-primary" id="boton" onclick="entra()">
+                            Entrar
+                    </button>
+                    <div id ="alerta" class="alert alert-danger" role="alert" style= "display:none; margin-top:5px;">
+                        Usuario o contraseña incorrectos. <strong>Introduce los datos correctamente.</strong>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class= "logo"></div>
+    
+        <!-- JQuery -->
+        <script src="./js/jquery.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+    </body>
+</html>

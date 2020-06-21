@@ -1,0 +1,102 @@
+
+html{
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    text-align: center;
+    font-weight: bold;
+}
+
+#botoninicio { /* Retorno a Inicio Administrador */
+    float: right;
+}
+
+#menumapa {     /* Cajita menú filtrado de pasajeros */
+    margin-top: 7%;
+    width: 20%;
+    height: auto;
+    position: absolute;
+}
+
+#titfiltrado {       /* Titulo filtrado de pasajeros */
+    text-align: center;
+  
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+.tipofiltro {   /* Tipos de filtro: Aerolinea, tipo vuelo, planta */
+    border: black solid 1px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+.tipofiltro.nocturno{
+    background-color: white;
+}
+
+.tipofiltro a span {
+    position: absolute;
+    right: 2%;
+}
+
+.titulofiltrado{
+    
+    border-bottom: black solid 1px; 
+}
+
+.titulofiltrado.nocturno{
+    color: white;
+    border-bottom: white solid 1px; 
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav li {
+    padding: 5px 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.nav li ul {
+    display: none;     
+}
+
+.nav ul li {
+    list-style: none;   /* Retiramos guiones delante de las opciones */
+}
+
+.nav ul li:hover ul {
+    display: block;
+    position: absolute;
+}
+
+.nav li ul li {
+    position: relative;
+}
+
+
+
+#mapa {
+    border: black solid 1px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 957px;
+    height: 859px;
+    margin-left: 30%;
+    margin-right: 20%;
+    background: url('../img/mapa.png');
+    background-position: center center;
+    background-size: cover;
+}
