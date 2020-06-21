@@ -1,7 +1,7 @@
 # Web services for PTIN project
 
-Servicios web desarrollados para la asignatura Proyecto Tecnologías de la Información 
-de la Universidad Politècnica de Catalunya ©
+Servicios web desarrollados para la asignatura _Proyecto Tecnologías de la Información_ 
+de la _UPC_
 
 
 ## Lenguajes y frameworks utilizados 🛠️
