@@ -26,6 +26,9 @@ de la _UPC_
 ### Base de datos
 - MongoDB
 
+### Otras tecnologías utilizadas
+- Docker
+
 
 Fecha de entrega del proyecto: Junio de 2020
 
