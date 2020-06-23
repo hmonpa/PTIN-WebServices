@@ -18,10 +18,11 @@ de la _UPC_
 - Morgan
 - ...
 
-### Servicios Web (Front y Back-end)
+### Servicios Web
 - JavaScript
 - HTML5
 - CSS3
+- Bootstrap
 
 ### Base de datos
 - MongoDB
@@ -29,7 +30,7 @@ de la _UPC_
 ### Otras tecnologías utilizadas
 - Docker
 
-* Los servicios mencionados anteriormente se encuentran también en imágenes Docker subidas a mi perfil de [Docker Hub](https://hub.docker.com/u/hmonpa).
+Los servicios mencionados anteriormente se encuentran también en imágenes Docker subidas a mi perfil de [Docker Hub](https://hub.docker.com/u/hmonpa).
 
 ```
 docker pull hmonpa/apirest
